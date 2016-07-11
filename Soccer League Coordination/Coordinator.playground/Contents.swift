@@ -62,10 +62,11 @@ func assignData(player: String) -> (parent: String, height: Int, experience: Str
 }
 
 // Adding players to their correct teams.
-func assignPlayerToTeam(player: String){
-    let player_xp = assignData(player).experience
-    if player_xp == "Yes" {
-        if dragon.count == 0 {
+func assignPlayerToTeam(player: String, experience: String){
+    if experience == "Yes" {
+        if player
+        
+        /*if dragon.count == 0 {
             dragon.append(player)
         } else if raptors.count == 0 {
             raptors.append(player)
@@ -79,7 +80,7 @@ func assignPlayerToTeam(player: String){
             } else if sharks.count < raptors.count {
                 sharks.append(player)
             }
-        }
+        }*/
     }else{
         if dragon.count == 0 {
             dragon.append(player)
@@ -113,7 +114,8 @@ func sendLetterToGuardian(player_parent: String, player: String) -> String {
 // loop through players array.
 for player in players {
     // Assign a player to team.
-    assignPlayerToTeam(player)
+    let experience = assignData(player).experience
+    assignPlayerToTeam(player, experience: experience)
     // player_parent finds out the parents of the player.
     let player_parent = assignData(player).parent
     // send letter to Guardian/Parent of player.
